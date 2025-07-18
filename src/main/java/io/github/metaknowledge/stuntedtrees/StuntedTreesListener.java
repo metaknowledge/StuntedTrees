@@ -2,6 +2,7 @@ package io.github.metaknowledge.stuntedtrees;
 
 import org.bukkit.*;
 import org.bukkit.block.Biome;
+import org.bukkit.block.BlockState;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
@@ -11,6 +12,7 @@ import org.bukkit.event.world.StructureGrowEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,25 +23,44 @@ public class StuntedTreesListener implements Listener {
         this.trees = trees;
     }
 
-    public GrowthAbility checkGrowthAbility(Biome biome, @NotNull TreeType tree) {
-        if (trees == null || trees.getConfigurationSection(tree.toString()) == null) {
+    public GrowthAbility checkGrowthAbility(Biome biome, @NotNull TreeType tree, World.Environment environment) {
+        String tree_type = tree.toString();
+        if (trees == null) {
+            Bukkit.getLogger().severe("config null");
             return GrowthAbility.FULL_GROWTH;
         }
-        String tree_type = tree.toString();
-        List<String> fullGrowthBiomes = (List<String>) trees.getConfigurationSection(tree_type).getList("full-growth");
-        if (fullGrowthBiomes != null) {
-            for (String b : fullGrowthBiomes) {
-                if (biome.toString().equals(b)) {
-                    return GrowthAbility.FULL_GROWTH;
-                }
+        ConfigurationSection tree_config = trees.getConfigurationSection(tree_type);
+        if (tree_config == null) {
+            Bukkit.getLogger().severe("could not find tree definition");
+            return GrowthAbility.FULL_GROWTH;
+        }
+        String redirect = tree_config.getString("see");
+        if (redirect != null) {
+            tree_config = trees.getConfigurationSection(redirect);
+            Bukkit.getLogger().info("changing definition to " + redirect);
+            if (tree_config == null) {
+                Bukkit.getLogger().severe("other config null");
+                return GrowthAbility.FULL_GROWTH;
             }
         }
-        List<String> stuntedBiome = (List<String>) trees.getConfigurationSection(tree.toString()).getList("stunted");
-        if (stuntedBiome != null) {
-            for (String b : stuntedBiome) {
-                if (biome.toString().equals(b)) {
-                    return GrowthAbility.STUNTED;
-                }
+//        Bukkit.getLogger().info(tree_config.toString());
+//        Bukkit.getLogger().info(tree_config.getString("world"));
+//        Bukkit.getLogger().info(environment.toString());
+        if (!environment.toString().equals(tree_config.getString("world"))) {
+            return GrowthAbility.DEAD;
+        }
+        List<String> fullGrowthBiomes = tree_config.getStringList("full-growth");
+        for (String b : fullGrowthBiomes) {
+            if (biome.toString().equals(b)) {
+                Bukkit.getLogger().severe("worked");
+
+                return GrowthAbility.FULL_GROWTH;
+            }
+        }
+        List<String> stuntedBiome = tree_config.getStringList("stunted");
+        for (String b : stuntedBiome) {
+            if (biome.toString().equals(b)) {
+                return GrowthAbility.STUNTED;
             }
         }
         return GrowthAbility.DEAD;
@@ -52,13 +73,8 @@ public class StuntedTreesListener implements Listener {
         if (trees == null) {
             return;
         }
-
-        if (location.getWorld().getEnvironment().equals(World.Environment.NETHER)) {
-            e.setCancelled(true);
-            location.getBlock().setType(Material.DEAD_BUSH);
-        }
-        if (trees.contains(e.getSpecies().toString()) && trees.getConfigurationSection(e.getSpecies().toString()).getBoolean("enabled")) {
-            GrowthAbility growthAbility = checkGrowthAbility(biome, e.getSpecies());
+        if (trees.isConfigurationSection(e.getSpecies().toString()) && trees.getConfigurationSection(e.getSpecies().toString()).getBoolean("enabled")) {
+            GrowthAbility growthAbility = checkGrowthAbility(biome, e.getSpecies(), location.getWorld().getEnvironment());
             switch (growthAbility) {
                 case DEAD -> {
                     e.setCancelled(true);

@@ -1,6 +1,7 @@
 trees:
   MEGA_PINE: # Tree type
-    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+    enabled: true #  If it should spawn stunted
+    world: NORMAL # don't die in the world
     full-growth:
       - OLD_GROWTH_PINE_TAIGA
       - OLD_GROWTH_SPRUCE_TAIGA
@@ -27,61 +28,132 @@ trees:
       - FOREST
       - WINDSWEPT_HILLS
       - PLAINS
+      - BIRCH_FOREST
+      - OLD_GROWTH_BIRCH_FOREST
   MEGA_REDWOOD:
-    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+    enabled: true
+    see: MEGA_PINE
+  REDWOOD:
+    enabled: true
+    see: MEGA_PINE
+  TALL_REDWOOD:
+    enabled: true
+    see: MEGA_PINE
+  JUNGLE:
+    enabled: true
+    world: NORMAL
     full-growth:
+      - JUNGLE
+      - BAMBOO_JUNGLE
+      - SPARSE_JUNGLE
+      - MANGROVE_SWAMP
+      - SWAMP
+    stunted:
       - OLD_GROWTH_PINE_TAIGA
       - OLD_GROWTH_SPRUCE_TAIGA
       - SNOWY_TAIGA
       - TAIGA
-    stunted:
       - MUSHROOM_FIELDS
-      - JAGGED_PEAKS
-      - STONY_PEAKS
       - CHERRY_GROVE
+      - GROVE
+      - MEADOW
+      - FLOWER_FOREST
+      - SUNFLOWER_PLAINS
+      - DARK_FOREST
+      - SNOWY_PLAINS
+      - FOREST
+      - WINDSWEPT_HILLS
+      - PLAINS
+      - BIRCH_FOREST
+      - OLD_GROWTH_BIRCH_FOREST
+  SMALL_JUNGLE:
+    enabled: true
+    see: JUNGLE
+  COCOA_TREE:
+    enabled: true
+    see: JUNGLE
+  MANGROVE:
+    enabled: true
+    world: NORMAL
+    full-growth:
+      - MANGROVE_SWAMP
+      - SWAMP
+    stunted:
+      - JUNGLE
+      - BAMBOO_JUNGLE
+      - SPARSE_JUNGLE
+      - MUSHROOM_FIELDS
+  TALL_MANGROVE:
+    enabled: true
+    see: MANGROVE
+  TREE:
+    enabled: true
+    world: NORMAL
+    full-growth:
+      - MUSHROOM_FIELDS
+      - CHERRY_GROVE
+      - GROVE
+      - MEADOW
+      - SUNFLOWER_PLAINS
+      - FLOWER_FOREST
+      - JUNGLE
+      - BAMBOO_JUNGLE
+      - SPARSE_JUNGLE
+      - MUSHROOM_FIELDS
+      - DARK_FOREST
+      - FOREST
+      - PLAINS
+      - WINDSWEPT_HILLS
+      - BIRCH_FOREST
+      - OLD_GROWTH_BIRCH_FOREST
+    stunted:
+      - OLD_GROWTH_PINE_TAIGA
+      - OLD_GROWTH_SPRUCE_TAIGA
+      - SNOWY_TAIGA
+      - TAIGA
+      - JAGGED_PEAKS
       - FROZEN_PEAKS
       - SNOWY_SLOPES
-      - GROVE
-      - MEADOW
-      - BAMBOO_JUNGLE
-      - FLOWER_FOREST
-      - SUNFLOWER_PLAINS
       - WINDSWEPT_FOREST
-      - DARK_FOREST
-      - SPARSE_JUNGLE
-      - JUNGLE
       - SNOWY_PLAINS
       - MANGROVE_SWAMP
       - SWAMP
-      - FOREST
-      - WINDSWEPT_HILLS
-      - PLAINS
-  JUNGLE:
-    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+      - SAVANNA
+      - SAVANNA_PLATEAU
+      - WINDSWEPT_SAVANNA
+      - WOODED_BADLANDS
+  BIG_TREE:
+    enabled: true
+    see: TREE
+  BIRCH:
+    enabled: true
+    see: TREE
+  TALL_BIRCH:
+    enabled: true
+    see: TREE
+  DARK_OAK:
+    enabled: true
+    see: TREE
+  AZALEA:
+    enabled: true
+    see: TREE
+  CHERRY:
+    enabled: true
+    see: TREE
+  RED_MUSHROOM:
+    enabled: true
+    world: NORMAL
     full-growth:
-      - JUNGLE
-      - BAMBOO_JUNGLE
-      - SPARSE_JUNGLE
-      - MANGROVE_SWAMP
-      - SWAMP
-    stunted:
-      - OLD_GROWTH_PINE_TAIGA
-      - OLD_GROWTH_SPRUCE_TAIGA
-      - SNOWY_TAIGA
-      - TAIGA
       - MUSHROOM_FIELDS
-      - CHERRY_GROVE
-      - GROVE
-      - MEADOW
-      - FLOWER_FOREST
-      - SUNFLOWER_PLAINS
       - DARK_FOREST
-      - SNOWY_PLAINS
-      - FOREST
-      - WINDSWEPT_HILLS
-      - PLAINS
-  MANGROVE:
-    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+      - LUSH_CAVES
+      - DRIPSTONE_CAVES
+  BROWN_MUSHROOM:
+    enabled: true
+    see: RED_MUSHROOM
+  SWAMP:
+    enabled: true
+    world: true
     full-growth:
       - MANGROVE_SWAMP
       - SWAMP
@@ -89,4 +161,24 @@ trees:
       - JUNGLE
       - BAMBOO_JUNGLE
       - SPARSE_JUNGLE
-      - MUSHROOM_FIELDS
+  ACACIA:
+    enabled: true
+    world: NORMAL
+    full-growth:
+      - SAVANNA
+      - SAVANNA_PLATEAU
+      - WINDSWEPT_SAVANNA
+      - BADLANDS
+      - WOODED_BADLANDS
+      - ERODED_BADLANDS
+    stunted:
+      - DESERT
+      - BEACH
+  PALE_OAK:
+    enabled: true
+    world: NORMAL
+    full-growth:
+      - PALE_GARDEN
+  PALE_OAK_CREAKING:
+    enabled: true
+    see: PALE_OAK
