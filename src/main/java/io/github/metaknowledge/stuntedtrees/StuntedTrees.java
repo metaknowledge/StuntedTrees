@@ -1,16 +1,16 @@
 package io.github.metaknowledge.stuntedtrees;
 
 import org.bukkit.*;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.List;
-
 public final class StuntedTrees extends JavaPlugin {
+    public final ConfigurationSection trees = getConfig().getConfigurationSection("trees");
+
     @Override
     public void onEnable() {
         // Plugin startup logic
-        StuntedTreesConfig config = new StuntedTreesConfig();
-        Bukkit.getPluginManager().registerEvents(new StuntedTreesListener(config), this);
+        Bukkit.getPluginManager().registerEvents(new StuntedTreesListener(trees), this);
     }
 
     @Override
