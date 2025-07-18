@@ -99,11 +99,10 @@ trees:
       - JUNGLE
       - BAMBOO_JUNGLE
       - SPARSE_JUNGLE
-      - MUSHROOM_FIELDS
       - DARK_FOREST
       - FOREST
       - PLAINS
-      - WINDSWEPT_HILLS
+      - WINDSWEPT_FOREST
       - BIRCH_FOREST
       - OLD_GROWTH_BIRCH_FOREST
     stunted:
@@ -113,8 +112,8 @@ trees:
       - TAIGA
       - JAGGED_PEAKS
       - FROZEN_PEAKS
-      - SNOWY_SLOPES
-      - WINDSWEPT_FOREST
+      - WINDSWEPT_HILLS
+      - SNOWY_SLOPESs
       - SNOWY_PLAINS
       - MANGROVE_SWAMP
       - SWAMP
