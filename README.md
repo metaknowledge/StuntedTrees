@@ -13,3 +13,6 @@ reload the world after added the datapack
 ### Config
 Uses a config file to specify what biomes work for each tree. Can be found in src/resources/config.yml
 Uses datapacks to generate trees with the tree definition provided by mojang. Edit the file in the datapack to get different tree generation.
+
+## Current Limitations
+I have only made configurations for the large spruce, jungle, and mangrove trees.  
