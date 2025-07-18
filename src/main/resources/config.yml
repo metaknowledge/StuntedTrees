@@ -1,0 +1,92 @@
+structures:
+  MEGA_PINE: # Tree type
+    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+    full-growth:
+      - OLD_GROWTH_PINE_TAIGA
+      - OLD_GROWTH_SPRUCE_TAIGA
+      - SNOWY_TAIGA
+      - TAIGA
+    stunted:
+      - MUSHROOM_FIELDS
+      - JAGGED_PEAKS
+      - CHERRY_GROVE
+      - FROZEN_PEAKS
+      - SNOWY_SLOPES
+      - GROVE
+      - MEADOW
+      - BAMBOO_JUNGLE
+      - FLOWER_FOREST
+      - SUNFLOWER_PLAINS
+      - WINDSWEPT_FOREST
+      - DARK_FOREST
+      - SPARSE_JUNGLE
+      - JUNGLE
+      - SNOWY_PLAINS
+      - MANGROVE_SWAMP
+      - SWAMP
+      - FOREST
+      - WINDSWEPT_HILLS
+      - PLAINS
+  MEGA_REDWOOD:
+    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+    full-growth:
+      - OLD_GROWTH_PINE_TAIGA
+      - OLD_GROWTH_SPRUCE_TAIGA
+      - SNOWY_TAIGA
+      - TAIGA
+    stunted:
+      - MUSHROOM_FIELDS
+      - JAGGED_PEAKS
+      - STONY_PEAKS
+      - CHERRY_GROVE
+      - FROZEN_PEAKS
+      - SNOWY_SLOPES
+      - GROVE
+      - MEADOW
+      - BAMBOO_JUNGLE
+      - FLOWER_FOREST
+      - SUNFLOWER_PLAINS
+      - WINDSWEPT_FOREST
+      - DARK_FOREST
+      - SPARSE_JUNGLE
+      - JUNGLE
+      - SNOWY_PLAINS
+      - MANGROVE_SWAMP
+      - SWAMP
+      - FOREST
+      - WINDSWEPT_HILLS
+      - PLAINS
+  MEGA_JUNGLE:
+    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+    full-growth:
+      - JUNGLE
+      - BAMBOO_JUNGLE
+      - SPARSE_JUNGLE
+      - MANGROVE_SWAMP
+      - SWAMP
+    stunted:
+      - OLD_GROWTH_PINE_TAIGA
+      - OLD_GROWTH_SPRUCE_TAIGA
+      - SNOWY_TAIGA
+      - TAIGA
+      - MUSHROOM_FIELDS
+      - CHERRY_GROVE
+      - GROVE
+      - MEADOW
+      - FLOWER_FOREST
+      - SUNFLOWER_PLAINS
+      - DARK_FOREST
+      - SNOWY_PLAINS
+      - FOREST
+      - WINDSWEPT_HILLS
+      - PLAINS
+  MANGROVE:
+    enabled: true #  If it should spawn a terra structure instead of the vanilla one
+    full-growth:
+      - MANGROVE_SWAMP
+      - SWAMP
+    stunted:
+      - JUNGLE
+      - BAMBOO_JUNGLE
+      - SPARSE_JUNGLE
+      - MUSHROOM_FIELDS
