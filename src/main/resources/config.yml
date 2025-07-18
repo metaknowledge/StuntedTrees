@@ -140,7 +140,7 @@ trees:
     enabled: true
     see: TREE
   RED_MUSHROOM:
-    enabled: true
+    enabled: false
     world: NORMAL
     full-growth:
       - MUSHROOM_FIELDS
@@ -148,7 +148,7 @@ trees:
       - LUSH_CAVES
       - DRIPSTONE_CAVES
   BROWN_MUSHROOM:
-    enabled: true
+    enabled: false
     see: RED_MUSHROOM
   SWAMP:
     enabled: true
