@@ -1,4 +1,4 @@
-structures:
+trees:
   MEGA_PINE: # Tree type
     enabled: true #  If it should spawn a terra structure instead of the vanilla one
     full-growth:
